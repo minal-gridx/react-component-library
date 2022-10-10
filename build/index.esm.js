@@ -31,9 +31,10 @@ var css_248z = ":root {\n  --background: #fff;\n  --font-color: #494949; }\n\n@m
 styleInject(css_248z);
 
 var TestComponent = function (_a) {
-    var heading = _a.heading, content = _a.content;
+    var heading = _a.heading, content = _a.content, header = _a.header;
     return (React.createElement("div", { "data-testid": "test-component", className: "test-component" },
         React.createElement("h1", { "data-testid": "test-component__heading", className: "heading" }, heading),
+        React.createElement("h3", null, header),
         React.createElement("div", { "data-testid": "test-component__content" }, content)));
 };
 

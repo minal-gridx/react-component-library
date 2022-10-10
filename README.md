@@ -1,7 +1,5 @@
 # React Component Library
 
-[![Build status](https://badge.buildkite.com/90ff98db996bb137c5be1bdce666c4b1ce68a25b17af0a6a04.svg?branch=master)](https://buildkite.com/harvey/react-component-library)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 This project skeleton was created to help people get started with creating their own React component library using:
 
@@ -142,13 +140,13 @@ npm i --save github:repourl#branch-name
 
 ## Usage
 
-Let's say you created a public NPM package called `harvey-component-library` with the `TestComponent` component created in this repository.
+Let's say you created a public NPM package called `react-component-library` with the `TestComponent` component created in this repository.
 
 Usage of the component (after the library installed as a dependency into another project) will be:
 
 ```TSX
 import React from "react";
-import { TestComponent } from "harvey-component-library";
+import { TestComponent } from "react-component-library";
 
 const App = () => (
   <div className="app-container">
@@ -160,21 +158,21 @@ const App = () => (
 export default App;
 ```
 
-[Check out this Code Sandbox for a live example.](https://codesandbox.io/s/harvey-component-library-example-y2b60?file=/src/App.js)
+[Check out this Code Sandbox for a live example.](https://codesandbox.io/s/react-component-library-example-y2b60?file=/src/App.js)
 
 ### Using Component Library SASS Variables
 
 I've found that it's helpful to export SASS variables to projects consuming the library. As such, I've added the `rollup-plugin-copy` NPM package and used it to copy the [`src/typography.scss`](src/typography.scss) and [`variables.scss`](src/variables.scss) into the `build` directory as part of the Rollup bundle process. This allows you to use these variables in your projects consuming the component library.
 
-For example, let's say you installed `harvey-component-library` into your project. To use the exported variables/mixins, in a SASS file you would do the following:
+For example, let's say you installed `react-component-library` into your project. To use the exported variables/mixins, in a SASS file you would do the following:
 
 ```Sass
-@import '~harvey-component-library/build/typography';
+@import 'typography';
 
 .example-container {
     @include heading;
 
-    color: $harvey-white;
+    color: $template-white;
 }
 ```
 
@@ -219,7 +217,7 @@ Code splitting of your components is not supported by default.
 
 
 ```
-import TestComponent from 'harvey-component-library/build/TestComponent';
+import TestComponent from 'react-component-library/build/TestComponent';
 ```
 
 This can reduce the bundle size for projects using older (CJS) module formats.
